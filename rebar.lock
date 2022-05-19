@@ -10,16 +10,16 @@
  {<<"gproc">>,{pkg,<<"gproc">>,<<"0.9.0">>},0},
  {<<"lasp">>,
   {git,"https://github.com/Inkwell-Data/lasp.git",
-       {ref,"1eae4c3e5be2c103d866b97bbacb6e52e36799b2"}},
+       {ref,"a3715a25e108681b31b509ed8bf049acdd29344a"}},
   0},
  {<<"lasp_pg">>,
   {git,"https://github.com/Inkwell-Data/lasp_pg.git",
-       {ref,"948d41fe39bbc63249165477e5efd5d0c0ffb80b"}},
+       {ref,"107e610a9b7634ffaac9a22286f4e862ae0b8bbd"}},
   0},
  {<<"lasp_support">>,{pkg,<<"lasp_support">>,<<"0.1.0">>},1},
  {<<"opentelemetry_api">>,
   {git_subdir,"http://github.com/open-telemetry/opentelemetry-erlang",
-              {ref,"2b8d7b2a6d5cb6a97cd2c44c3612c8a753a08dfd"},
+              {ref,"95e6763dd399aa1adae1b6c852abf0a99acd03f2"},
               "apps/opentelemetry_api"},
   0},
  {<<"partisan">>,
@@ -30,16 +30,16 @@
   {git,"https://github.com/Inkwell-Data/plumtree.git",
        {ref,"f7fb3da55ba2bea8e84224dc1eedbc333ee97c85"}},
   1},
- {<<"quickrand">>,{pkg,<<"quickrand">>,<<"2.0.2">>},1},
+ {<<"quickrand">>,{pkg,<<"quickrand">>,<<"2.0.4">>},1},
  {<<"sbroker">>,
-  {git,"git@github.com:Inkwell-Data/sbroker.git",
-       {ref,"2ef8d0b0db927c8425c0a839f4cd264e6dbbce84"}},
+  {git,"https://github.com/miniclip/sbroker.git",
+       {ref,"d56b2cf81febfb008cd25ac93ad5f04bf75aa63b"}},
   0},
  {<<"types">>,
   {git,"https://github.com/Inkwell-Data/types.git",
        {ref,"8cfaeb1bd7a0983db62d1ed3129e7cab91239ff6"}},
   0},
- {<<"uuid">>,{pkg,<<"uuid_erl">>,<<"2.0.2">>},0}]}.
+ {<<"uuid">>,{pkg,<<"uuid_erl">>,<<"2.0.4">>},0}]}.
 [
 {pkg_hash,[
  {<<"acceptor_pool">>, <<"43C20D2ACAE35F0C2BCD64F9D2BDE267E459F0F3FD23DAB26485BF518C281B21">>},
@@ -48,8 +48,8 @@
  {<<"gen_flow">>, <<"2FF6ABE3ED1C5C9BC41F81BF09364A3F63F96E4D378D45A2A2DDC4FC06F3484A">>},
  {<<"gproc">>, <<"853CCB7805E9ADA25D227A157BA966F7B34508F386A3E7E21992B1B484230699">>},
  {<<"lasp_support">>, <<"A6D665138BD8C10555FE7A4A2A81A8A47079EAE5FFC368D411DE660EB7A66F04">>},
- {<<"quickrand">>, <<"1D73FAA52E0C149FCBC72A63C26135FF68BE8FA7870675C73645896788A7540C">>},
- {<<"uuid">>, <<"0D1CA9D94CA3B058467BCE20B7706CC816A2BDBBE0574DD008936AE97EA4EBE7">>}]},
+ {<<"quickrand">>, <<"168CA3A8466A26912B8C3A1D6AA58975E1BB49E5C7AFB4998B80F6B90F910490">>},
+ {<<"uuid">>, <<"77C3E3EE1E1701A2856CE945846D7CEB71931C60633A305D0B0FEAE03B2B3B5C">>}]},
 {pkg_hash_ext,[
  {<<"acceptor_pool">>, <<"0CBCD83FDC8B9AD2EEE2067EF8B91A14858A5883CB7CD800E6FCD5803E158788">>},
  {<<"cf">>, <<"315E8D447D3A4B02BCDBFA397AD03BBB988A6E0AA6F44D3ADD0F4E3C3BF97672">>},
@@ -57,6 +57,6 @@
  {<<"gen_flow">>, <<"AA139C67942475A08B73D754587FFD4694CE92A149A26D16DDB16EBD6CC19EB4">>},
  {<<"gproc">>, <<"587E8AF698CCD3504CF4BA8D90F893EDE2B0F58CABB8A916E2BF9321DE3CF10B">>},
  {<<"lasp_support">>, <<"D57A85BA77607BB097CE4B9DD233E29C98C4824468D1A7BE06C9C6C15D8618F8">>},
- {<<"quickrand">>, <<"E21C6C7F29CA995468662085CA54D7D09E861C180A9DFEC2CF4A2E75364A16D6">>},
- {<<"uuid">>, <<"4866CA7B3BD0265BC371590DCD0FE2832FC08588A071B72D07E09E23F163D0D6">>}]}
+ {<<"quickrand">>, <<"4CB18E9304CF28E054E8DC6E151D1AC7F174E6FE31D5C1A07F71279B92A90800">>},
+ {<<"uuid">>, <<"7A4CCD1C151D9B88B4383FA802BCCF9BCB3754B7F53D7CAA164D51A14A6652E4">>}]}
 ].
