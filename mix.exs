@@ -17,23 +17,26 @@ defmodule Erleans.MixProject do
     [
       extra_applications: [:logger],
       mod: {:erleans_app, []},
-      env: [deactivate_after: 2700000, refresh_interval: 5000, num_partitions: 128]
+      env: [deactivate_after: 2_700_000, refresh_interval: 5000, num_partitions: 128]
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:lasp, "~> 0.8.2", override: true},
-      {:lasp_pg, "~> 0.1.0"},
-      {:partisan, "~> 3.0", override: true},
-      {:gproc, "~> 0.8.0"},
-      {:sbroker, "~> 1.0.0"},
-      {:opentelemetry_api, github: "open-telemetry/opentelemetry-erlang-api"},
-      {:erlware_commons, "~> 1.3.1"},
-      {:types, "~> 0.1.8", override: true},
+      {:lasp, github: "Inkwell-Data/lasp", branch: "master", override: true},
+      {:lasp_pg, github: "Inkwell-Data/lasp_pg", branch: "master", override: true},
+      {:partisan, github: "Inkwell-Data/partisan", branch: "master", override: true},
+      {:gproc, "~> 0.9.0"},
+      {:sbroker, github: "miniclip/sbroker", branch: "master", override: true},
+      {:opentelemetry_api,
+       github: "open-telemetry/opentelemetry-erlang",
+       sparse: "apps/opentelemetry_api",
+       override: true},
+      {:types, github: "Inkwell-Data/types", branch: "master", override: true},
+      {:erlware_commons, "~> 1.6.0"},
       {:uuid, "~> 1.8", hex: :uuid_erl, override: true},
-      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false}
     ]
   end
 
