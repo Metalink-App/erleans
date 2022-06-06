@@ -19,7 +19,7 @@
  {<<"lasp_support">>,{pkg,<<"lasp_support">>,<<"0.1.0">>},1},
  {<<"opentelemetry_api">>,
   {git_subdir,"http://github.com/open-telemetry/opentelemetry-erlang",
-              {ref,"95e6763dd399aa1adae1b6c852abf0a99acd03f2"},
+              {ref,"94d385d4941003c5f63916794fc90fbde977a2c7"},
               "apps/opentelemetry_api"},
   0},
  {<<"partisan">>,

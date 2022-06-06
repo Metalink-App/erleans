@@ -8,6 +8,7 @@
     stdlib,
     sasl,
     uuid,
+    erl_syntax,
     lasp,
     lasp_pg,
     gproc,
