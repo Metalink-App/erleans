@@ -158,7 +158,7 @@ do_for_ref(GrainRef, Fun) ->
             Pid when is_pid(Pid) ->
                 Fun(noname, Pid);
             undefined ->
-                ?LOG_INFO("start=~p", [GrainRef]),
+                ?LOG_INFO("start=~w", [GrainRef]),
                 case activate_grain(GrainRef) of
                     {ok, undefined} ->
                         %% the only way the Pid could be `undefined`
@@ -381,7 +381,7 @@ terminate(?NO_PROVIDER_ERROR, _State, #data{cb_module=CbModule,
     ok;
 terminate(Reason, _State, Data=#data{ref=GrainRef}) ->
     maybe_remove_worker(GrainRef),
-    ?LOG_INFO("at=terminate reason=~p", [Reason]),
+    ?LOG_INFO("at=terminate reason=~w", [Reason]),
     %% supervisor is terminating, node is probably shutting down.
     %% deactivate the grain so it can clean up and save if needed
     _ = finalize_and_stop(Data),
