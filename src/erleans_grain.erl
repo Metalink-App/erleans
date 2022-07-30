@@ -31,6 +31,14 @@
 
 -behaviour(gen_statem).
 
+-ifdef(OTP_RELEASE).
+-define(WITH_STACKTRACE(T, R, S), T:R:S ->).
+-else.
+-define(WITH_STACKTRACE(T, R, S), T:R -> S = erlang:get_stacktrace(),).
+-endif.
+
+-define(STACKTRACE(), try throw(ok) catch ?WITH_STACKTRACE(_T, _R, S) S end).
+
 -export([start_link/1,
          call/2,
          call/3,
@@ -379,9 +387,9 @@ terminate(?NO_PROVIDER_ERROR, _State, #data{cb_module=CbModule,
     %% We do not want to call the deactivate callback here because this
     %% is not a deactivation, it is a hard crash.
     ok;
-terminate(Reason, _State, Data=#data{ref=GrainRef}) ->
+terminate(Reason, State, Data=#data{ref=GrainRef}) ->
     maybe_remove_worker(GrainRef),
-    ?LOG_INFO("at=terminate reason=~w", [Reason]),
+    ?LOG_INFO("at=terminate reason=~w, state=~w, ref=~w", [Reason, State, GrainRef, ?STACKTRACE()]),
     %% supervisor is terminating, node is probably shutting down.
     %% deactivate the grain so it can clean up and save if needed
     _ = finalize_and_stop(Data),
