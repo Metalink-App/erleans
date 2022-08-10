@@ -166,7 +166,7 @@ do_for_ref(GrainRef, Fun) ->
             Pid when is_pid(Pid) ->
                 Fun(noname, Pid);
             undefined ->
-                ?LOG_INFO("start=~w", [GrainRef]),
+                ?LOG_DEBUG("start=~w", [GrainRef]),
                 case activate_grain(GrainRef) of
                     {ok, undefined} ->
                         %% the only way the Pid could be `undefined`
@@ -178,6 +178,7 @@ do_for_ref(GrainRef, Fun) ->
                     {error, {already_started, Pid}} ->
                         Fun(noname, Pid);
                     {error, Error} ->
+                        ?LOG_ERROR("Error starting grain=~w, error=~w", [GrainRef, Error]),
                         exit({noproc, Error})
                 end
         end
@@ -496,6 +497,7 @@ update_state(CbModule, {Provider, ProviderName}, Id, Data, ETag, NewETag) ->
         ok ->
             NewETag;
         {error, Reason} ->
+            ?LOG_ERROR("at=update_state module=~w, provider=~w, id=~w, data=~w etag=~w, new_etag=~w, trace=~w", [CbModule, {Provider, ProviderName}, Id, Data, ETag, NewETag, ?STACKTRACE()]),
             exit(Reason)
     end.
 
